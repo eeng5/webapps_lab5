@@ -1,0 +1,25 @@
+<div class='bodyclass'>
+  <div id='top' class='row titlerow'>
+    <div class='col-12'>
+      <h1 class='text-center'>MadLibs</h1>
+    </div>
+  </div>
+  <div id='inputs' class='row inputbox'>
+    <div class='col-10 offset-lg-1 inputarea'>
+      <form method="POST" action="/results">
+        <table>
+          {{#each terms}}
+          <tr class='inputrow'>
+            <td><span class='prompt'>{{.}}</span></td>
+            <td>:</td>
+            <td><input type='text' maxlength="32" size='24' class='input' name='id{{@index}}' required></td>
+          </tr>
+          {{/each}}
+        </table>
+        <br />
+
+        <button class='button submitbutton' id='submit'>Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
